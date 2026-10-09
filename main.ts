@@ -241,11 +241,17 @@ export default class VaultVariablesPlugin extends Plugin {
 				if (!target?.closest(".copy-code-button")) return;
 				ev.preventDefault();
 				ev.stopImmediatePropagation();
-				// Computed at click time so it always uses current values.
-				navigator.clipboard
-					.writeText(this.substitute(original).replace(/(\r?\n)+$/, ""))
-					.then(() => new Notice("Copied with variables substituted"))
-					.catch(() => new Notice("Copy failed"));
+				void (async () => {
+					try {
+						// Computed at click time so it always uses current values.
+						await navigator.clipboard.writeText(
+							this.substitute(original).replace(/(\r?\n)+$/, "")
+						);
+						new Notice("Copied with variables substituted");
+					} catch {
+						new Notice("Copy failed");
+					}
+				})();
 			},
 			true
 		);
@@ -584,7 +590,6 @@ class VVSettingTab extends PluginSettingTab {
 		const { containerEl } = this;
 		containerEl.empty();
 		containerEl.addClass("vv-editor");
-		new Setting(containerEl).setName("Variables").setHeading();
 
 		new Setting(containerEl)
 			.setName("Highlight undefined variables")
