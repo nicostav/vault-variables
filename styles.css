@@ -1,0 +1,80 @@
+.vv-missing {
+	background-color: var(--background-modifier-error);
+	border-radius: 3px;
+}
+
+.vv-suggest-name {
+	font-weight: var(--font-semibold);
+}
+
+.vv-suggest-value {
+	font-size: var(--font-ui-smaller);
+	color: var(--text-muted);
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.vv-search {
+	width: 100%;
+	margin-bottom: 12px;
+}
+
+.vv-rows {
+	margin-bottom: 12px;
+}
+
+.vv-row {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-bottom: 8px;
+}
+
+.vv-handle {
+	cursor: grab;
+	user-select: none;
+	color: var(--text-muted);
+	padding: 0 4px;
+	font-size: 1.2em;
+}
+
+.vv-handle-disabled {
+	opacity: 0.3;
+	cursor: default;
+}
+
+.vv-move {
+	padding: 2px 8px;
+}
+
+.vv-dragging {
+	opacity: 0.4;
+}
+
+.vv-drop-before {
+	box-shadow: 0 -2px 0 0 var(--interactive-accent);
+}
+
+.vv-drop-after {
+	box-shadow: 0 2px 0 0 var(--interactive-accent);
+}
+
+.vv-row input {
+	flex: 1;
+	min-width: 0;
+}
+
+.vv-duplicate {
+	border-color: var(--text-error);
+}
+
+.vv-duplicate-warning {
+	color: var(--text-error);
+	font-size: var(--font-ui-smaller);
+	margin-bottom: 8px;
+}
+
+.vv-duplicate-warning:empty {
+	display: none;
+}

@@ -1,0 +1,9 @@
+{
+	"id": "vault-variables",
+	"name": "Vault Variables",
+	"version": "1.0.0",
+	"minAppVersion": "1.0.0",
+	"description": "Define variables once and use them as {{name}} anywhere in your notes.",
+	"author": "nicostav",
+	"isDesktopOnly": false
+}
